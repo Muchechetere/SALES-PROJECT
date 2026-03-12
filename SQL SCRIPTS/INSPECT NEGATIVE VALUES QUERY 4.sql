@@ -1,6 +1,5 @@
 -- Negative & 0 values
 SELECT 
-    'Negative' AS [Value Type],
     [Sell Region],
     [Sell Sub-Region],
     [Fiscal Month],
