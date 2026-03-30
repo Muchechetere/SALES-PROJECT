@@ -1,4 +1,4 @@
-CREATE OR ALTER VIEW dbo.vw_AllSalesFigures
+CREATE OR ALTER VIEW dbo.SalesFigures_All
 AS
 SELECT 
     [Sell Region], [Sell Sub-Region], [Fiscal Month], 
