@@ -1,0 +1,15 @@
+﻿EVALUATE
+ADDCOLUMNS(
+    vw_Dim_FiscalMonth,
+    "Fiscal Quarter",
+        VAR _FiscalYear = LEFT([Fiscal Month], 4)
+        VAR _MonthNum = VALUE(RIGHT([Fiscal Month], 2))
+        VAR _Qtr = SWITCH(
+            TRUE(),
+            _MonthNum <= 3, "Q1",
+            _MonthNum <= 6, "Q2",
+            _MonthNum <= 9, "Q3",
+            "Q4"
+        )
+        RETURN _FiscalYear & _Qtr
+)
