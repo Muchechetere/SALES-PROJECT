@@ -78,10 +78,17 @@
       "data": [
         {
           "properties": {
+            "numericStart": {
+              "expr": {
+                "Literal": {
+                  "Value": "2019D"
+                }
+              }
+            },
             "numericEnd": {
               "expr": {
                 "Literal": {
-                  "Value": "2018D"
+                  "Value": "2019D"
                 }
               }
             },
@@ -111,32 +118,67 @@
                 "Where": [
                   {
                     "Condition": {
-                      "Comparison": {
-                        "ComparisonKind": 4,
+                      "And": {
                         "Left": {
-                          "HierarchyLevel": {
-                            "Expression": {
-                              "Hierarchy": {
+                          "Comparison": {
+                            "ComparisonKind": 2,
+                            "Left": {
+                              "HierarchyLevel": {
                                 "Expression": {
-                                  "PropertyVariationSource": {
+                                  "Hierarchy": {
                                     "Expression": {
-                                      "SourceRef": {
-                                        "Source": "d"
+                                      "PropertyVariationSource": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "d"
+                                          }
+                                        },
+                                        "Name": "Variation",
+                                        "Property": "Date"
                                       }
                                     },
-                                    "Name": "Variation",
-                                    "Property": "Date"
+                                    "Hierarchy": "Date Hierarchy"
                                   }
                                 },
-                                "Hierarchy": "Date Hierarchy"
+                                "Level": "Year"
                               }
                             },
-                            "Level": "Year"
+                            "Right": {
+                              "Literal": {
+                                "Value": "2019D"
+                              }
+                            }
                           }
                         },
                         "Right": {
-                          "Literal": {
-                            "Value": "2018D"
+                          "Comparison": {
+                            "ComparisonKind": 4,
+                            "Left": {
+                              "HierarchyLevel": {
+                                "Expression": {
+                                  "Hierarchy": {
+                                    "Expression": {
+                                      "PropertyVariationSource": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "d"
+                                          }
+                                        },
+                                        "Name": "Variation",
+                                        "Property": "Date"
+                                      }
+                                    },
+                                    "Hierarchy": "Date Hierarchy"
+                                  }
+                                },
+                                "Level": "Year"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "2019D"
+                              }
+                            }
                           }
                         }
                       }
