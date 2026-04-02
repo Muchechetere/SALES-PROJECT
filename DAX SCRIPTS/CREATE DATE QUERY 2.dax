@@ -1,0 +1,5 @@
+﻿EVALUATE
+ADDCOLUMNS(
+    vw_Dim_FiscalMonth,
+    "Date", DATE(VALUE(MID([Fiscal Month], 3, 2)) + 2000, VALUE(RIGHT([Fiscal Month], 2)), 1)
+)
