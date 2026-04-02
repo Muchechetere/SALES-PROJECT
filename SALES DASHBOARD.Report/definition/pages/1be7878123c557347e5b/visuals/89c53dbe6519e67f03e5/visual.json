@@ -81,14 +81,7 @@
             "numericStart": {
               "expr": {
                 "Literal": {
-                  "Value": "2019D"
-                }
-              }
-            },
-            "numericEnd": {
-              "expr": {
-                "Literal": {
-                  "Value": "2019D"
+                  "Value": "2022D"
                 }
               }
             },
@@ -118,67 +111,32 @@
                 "Where": [
                   {
                     "Condition": {
-                      "And": {
+                      "Comparison": {
+                        "ComparisonKind": 2,
                         "Left": {
-                          "Comparison": {
-                            "ComparisonKind": 2,
-                            "Left": {
-                              "HierarchyLevel": {
+                          "HierarchyLevel": {
+                            "Expression": {
+                              "Hierarchy": {
                                 "Expression": {
-                                  "Hierarchy": {
+                                  "PropertyVariationSource": {
                                     "Expression": {
-                                      "PropertyVariationSource": {
-                                        "Expression": {
-                                          "SourceRef": {
-                                            "Source": "d"
-                                          }
-                                        },
-                                        "Name": "Variation",
-                                        "Property": "Date"
+                                      "SourceRef": {
+                                        "Source": "d"
                                       }
                                     },
-                                    "Hierarchy": "Date Hierarchy"
+                                    "Name": "Variation",
+                                    "Property": "Date"
                                   }
                                 },
-                                "Level": "Year"
+                                "Hierarchy": "Date Hierarchy"
                               }
                             },
-                            "Right": {
-                              "Literal": {
-                                "Value": "2019D"
-                              }
-                            }
+                            "Level": "Year"
                           }
                         },
                         "Right": {
-                          "Comparison": {
-                            "ComparisonKind": 4,
-                            "Left": {
-                              "HierarchyLevel": {
-                                "Expression": {
-                                  "Hierarchy": {
-                                    "Expression": {
-                                      "PropertyVariationSource": {
-                                        "Expression": {
-                                          "SourceRef": {
-                                            "Source": "d"
-                                          }
-                                        },
-                                        "Name": "Variation",
-                                        "Property": "Date"
-                                      }
-                                    },
-                                    "Hierarchy": "Date Hierarchy"
-                                  }
-                                },
-                                "Level": "Year"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "2019D"
-                              }
-                            }
+                          "Literal": {
+                            "Value": "2022D"
                           }
                         }
                       }
