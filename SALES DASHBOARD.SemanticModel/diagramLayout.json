@@ -1,0 +1,86 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 260.36430101749
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 72.946458031697716,
+            "y": 527.762022650165
+          },
+          "nodeIndex": "vw_Dim_SellRegion",
+          "nodeLineageTag": "8891c68a-15e9-4bad-9b2a-ee53085dd4fe",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1001.0582591859389,
+            "y": 420.92986317287711
+          },
+          "nodeIndex": "vw_Dim_SellSubRegion",
+          "nodeLineageTag": "90c1989d-cc76-40c3-bd43-25ba976aac90",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 596.46705995176239,
+            "y": 663.30999392171179
+          },
+          "nodeIndex": "vw_SalesFigures_All",
+          "nodeLineageTag": "0364a5f9-9b48-48e9-9350-13abc2f55aa9",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1081.9812389861045,
+            "y": 980.27405945353189
+          },
+          "nodeIndex": "vw_Dim_FiscalMonth",
+          "nodeLineageTag": "6163a91b-c69b-44e9-b734-171b65d65807",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1293.0347809544069,
+            "y": 395.9820525312864
+          },
+          "nodeIndex": "Dim_Date",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 44.230911415480847,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

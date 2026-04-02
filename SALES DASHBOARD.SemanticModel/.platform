@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "SALES DASHBOARD"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5cf99c66-0aed-4530-a03c-990ed2e9a57a"
+  }
+}

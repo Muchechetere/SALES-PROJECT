@@ -1,0 +1,28 @@
+relationship AutoDetected_66058f2c-b526-49ec-aafb-b91b670746ac
+	fromColumn: vw_Dim_SellSubRegion.'Sell Region'
+	toColumn: vw_Dim_SellRegion.'Sell Region'
+
+relationship AutoDetected_e80d0cae-6b46-4346-b786-55d048f81b86
+	fromColumn: vw_SalesFigures_All.'Sell Region'
+	toColumn: vw_Dim_SellRegion.'Sell Region'
+
+relationship AutoDetected_d7f85a73-1820-4b98-9989-c8cd02b9e2fc
+	isActive: false
+	fromColumn: vw_SalesFigures_All.'Sell Sub-Region'
+	toColumn: vw_Dim_SellSubRegion.'Sell Sub-Region'
+
+relationship AutoDetected_12c6dc87-e239-4df8-9031-1260b5461fd5
+	fromColumn: vw_SalesFigures_All.'Fiscal Month'
+	toColumn: vw_Dim_FiscalMonth.'Fiscal Month'
+
+relationship e714d7f6-e1e5-4162-9593-6fa7950800c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Date.Date
+	toColumn: LocalDateTable_ab0667e4-ce67-46dd-a30b-ed1d99322839.Date
+
+relationship 28561b80-f36c-40d7-aca5-f09033e1b92d
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: vw_Dim_FiscalMonth.Date
+	toColumn: Dim_Date.Date
+

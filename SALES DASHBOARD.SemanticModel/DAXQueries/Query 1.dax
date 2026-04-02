@@ -1,0 +1,11 @@
+Fiscal Quarter = 
+VAR FY = LEFT(vw_Dim_FiscalMonth[Fiscal Month], 4)
+VAR MN = VALUE(RIGHT(vw_Dim_FiscalMonth[Fiscal Month], 2))
+VAR QT = SWITCH(
+    TRUE(),
+    MN <= 3,  "Q1",
+    MN <= 6,  "Q2",
+    MN <= 9,  "Q3",
+    "Q4"
+)
+RETURN FY & QT

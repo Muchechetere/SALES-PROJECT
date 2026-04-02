@@ -1,0 +1,24 @@
+table vw_Dim_SellRegion
+	lineageTag: 8891c68a-15e9-4bad-9b2a-ee53085dd4fe
+
+	column 'Sell Region'
+		dataType: string
+		lineageTag: 0d2d472b-c828-4d33-86e9-46613d62d3e0
+		summarizeBy: none
+		sourceColumn: Sell Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_Dim_SellRegion = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("MOYO\SQLEXPRESS", "master"),
+				    dbo_vw_Dim_SellRegion = Source{[Schema="dbo",Item="vw_Dim_SellRegion"]}[Data]
+				in
+				    dbo_vw_Dim_SellRegion
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

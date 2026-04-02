@@ -1,0 +1,86 @@
+table vw_Dim_FiscalMonth
+	lineageTag: 6163a91b-c69b-44e9-b734-171b65d65807
+
+	column 'Fiscal Year'
+		dataType: string
+		lineageTag: 354f3603-0a01-4902-80dd-f732c5d98cab
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month'
+		dataType: string
+		lineageTag: 98c9235f-c6af-4fdf-9807-c4bc9ef21221
+		summarizeBy: none
+		sourceColumn: Fiscal Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Number
+		dataType: int64
+		formatString: 0
+		lineageTag: e3e435f5-bfe9-47a4-ab56-6f30a2ccd902
+		summarizeBy: none
+		sourceColumn: Month_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter' =
+			
+			VAR _FiscalYear = LEFT(vw_Dim_FiscalMonth[Fiscal Month], 4)
+			VAR _MonthNum = VALUE(RIGHT(vw_Dim_FiscalMonth[Fiscal Month], 2))
+			VAR _Quarter = SWITCH(
+			    TRUE(),
+			    _MonthNum <= 3,  "Q1",
+			    _MonthNum <= 6,  "Q2",
+			    _MonthNum <= 9,  "Q3",
+			    "Q4"
+			)
+			RETURN _FiscalYear & _Quarter
+		lineageTag: ac0fc59e-dd2d-405b-bb4a-16ad01bdc853
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date =
+			
+			VAR _Year = VALUE(MID(vw_Dim_FiscalMonth[Fiscal Month], 3, 2)) + 2000
+			VAR _Month = VALUE(RIGHT(vw_Dim_FiscalMonth[Fiscal Month], 2))
+			RETURN DATE(_Year, _Month, 1)
+		formatString: General Date
+		lineageTag: 0bd75911-ef11-4d60-886a-3331b4562764
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Number' =
+			
+			VAR _MonthNum = VALUE(RIGHT(vw_Dim_FiscalMonth[Fiscal Month], 2))
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    _MonthNum <= 3, 1,
+			    _MonthNum <= 6, 2,
+			    _MonthNum <= 9, 3,
+			    4
+			)
+		formatString: 0
+		lineageTag: a092ffee-6551-4b30-bfa8-a6b0b57cc69d
+		summarizeBy: none
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_Dim_FiscalMonth = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("MOYO\SQLEXPRESS", "master"),
+				    dbo_vw_Dim_FiscalMonth = Source{[Schema="dbo",Item="vw_Dim_FiscalMonth"]}[Data]
+				in
+				    dbo_vw_Dim_FiscalMonth
+
+	annotation PBI_ResultType = Table
+

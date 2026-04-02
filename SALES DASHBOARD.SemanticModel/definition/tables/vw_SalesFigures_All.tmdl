@@ -1,0 +1,58 @@
+table vw_SalesFigures_All
+	lineageTag: 0364a5f9-9b48-48e9-9350-13abc2f55aa9
+
+	column 'Sell Region'
+		dataType: string
+		lineageTag: 7cbf596c-5446-4852-a272-4581eed88372
+		summarizeBy: none
+		sourceColumn: Sell Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sell Sub-Region'
+		dataType: string
+		lineageTag: 7258f8cb-f147-4ec0-9a8a-055ff6eead4b
+		summarizeBy: none
+		sourceColumn: Sell Sub-Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month'
+		dataType: string
+		lineageTag: 9355cc78-4390-4a74-b0a4-5812ad876da6
+		summarizeBy: none
+		sourceColumn: Fiscal Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: 00aed8aa-1329-442a-9e86-b42795e3de4a
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year'
+		dataType: string
+		lineageTag: 1fdc538c-a6c8-4538-b25e-9911b0cf0e4a
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_SalesFigures_All = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("MOYO\SQLEXPRESS", "master"),
+				    dbo_vw_SalesFigures_All = Source{[Schema="dbo",Item="vw_SalesFigures_All"]}[Data]
+				in
+				    dbo_vw_SalesFigures_All
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

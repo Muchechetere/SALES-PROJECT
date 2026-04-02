@@ -1,0 +1,24 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["vw_Dim_SellRegion","vw_Dim_SellSubRegion","vw_SalesFigures_All","vw_Dim_FiscalMonth"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table vw_Dim_SellRegion
+ref table vw_Dim_SellSubRegion
+ref table vw_SalesFigures_All
+ref table vw_Dim_FiscalMonth
+ref table DateTableTemplate_0525cf3d-853b-4a0a-b130-6fb0caf3bf36
+ref table Dim_Date
+ref table LocalDateTable_ab0667e4-ce67-46dd-a30b-ed1d99322839
+
+ref cultureInfo en-US
+
