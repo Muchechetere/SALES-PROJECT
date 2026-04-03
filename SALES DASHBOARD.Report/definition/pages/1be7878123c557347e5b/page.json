@@ -23,5 +23,27 @@
         "howCreated": "User"
       }
     ]
-  }
+  },
+  "pageBinding": {
+    "name": "967bdc99aa8fd35abf87",
+    "type": "Default",
+    "parameters": []
+  },
+  "visualInteractions": [
+    {
+      "source": "fa0a0dfbdc356783c12f",
+      "target": "5ee86907408851ae8600",
+      "type": "DataFilter"
+    },
+    {
+      "source": "add5d99ba2e27ab3b078",
+      "target": "5ee86907408851ae8600",
+      "type": "DataFilter"
+    },
+    {
+      "source": "add5d99ba2e27ab3b078",
+      "target": "81f2ed8f1cdb8dd222ca",
+      "type": "NoFilter"
+    }
+  ]
 }

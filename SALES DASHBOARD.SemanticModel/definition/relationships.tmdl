@@ -1,17 +1,15 @@
-relationship AutoDetected_66058f2c-b526-49ec-aafb-b91b670746ac
-	fromColumn: vw_Dim_SellSubRegion.'Sell Region'
-	toColumn: vw_Dim_SellRegion.'Sell Region'
-
 relationship AutoDetected_e80d0cae-6b46-4346-b786-55d048f81b86
+	crossFilteringBehavior: bothDirections
 	fromColumn: vw_SalesFigures_All.'Sell Region'
 	toColumn: vw_Dim_SellRegion.'Sell Region'
 
 relationship AutoDetected_d7f85a73-1820-4b98-9989-c8cd02b9e2fc
-	isActive: false
+	crossFilteringBehavior: bothDirections
 	fromColumn: vw_SalesFigures_All.'Sell Sub-Region'
 	toColumn: vw_Dim_SellSubRegion.'Sell Sub-Region'
 
 relationship AutoDetected_12c6dc87-e239-4df8-9031-1260b5461fd5
+	crossFilteringBehavior: bothDirections
 	fromColumn: vw_SalesFigures_All.'Fiscal Month'
 	toColumn: vw_Dim_FiscalMonth.'Fiscal Month'
 

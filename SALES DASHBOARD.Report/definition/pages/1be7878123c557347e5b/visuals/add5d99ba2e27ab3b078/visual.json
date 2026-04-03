@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "add5d99ba2e27ab3b078",
   "position": {
-    "x": 450.14547754585709,
-    "y": 179.73434535104366,
-    "z": 8,
-    "height": 518.15306767868435,
-    "width": 830.664136622391,
-    "tabOrder": 3000
+    "x": 563.79310344827593,
+    "y": 220.68965517241381,
+    "z": 3000,
+    "height": 450.00000000000006,
+    "width": 700,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineChart",
@@ -32,9 +32,6 @@
             }
           ]
         },
-        "Series": {
-          "projections": []
-        },
         "Y": {
           "projections": [
             {
@@ -54,7 +51,8 @@
                 }
               },
               "queryRef": "Sum(vw_SalesFigures_All.Value)",
-              "nativeQueryRef": "Sum of Value"
+              "nativeQueryRef": "Sales Total",
+              "displayName": "Sales Total"
             }
           ]
         }
@@ -84,7 +82,27 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Sales Trend by Quarter'"
+                  "Value": "'Quarterly Sales Trend'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
                 }
               }
             }
@@ -93,42 +111,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a83593950581e16cfa43",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "vw_SalesFigures_All"
-                  }
-                },
-                "Property": "Value"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "7c6a6a338af1223f590a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vw_Dim_FiscalMonth"
-              }
-            },
-            "Property": "Fiscal Quarter"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
